@@ -169,7 +169,7 @@
     <target name="install-rabbitmq">
         <echo message="Installing rabbitmq"/>
         <exec dir="${project.basedir}"
-              command="sudo apt-get update && apt-get install -y rabbitmq-server && /etc/init.d/rabbitmq-server start"
+              command="sudo apt-get update ; apt-get install -y rabbitmq-server ; /etc/init.d/rabbitmq-server start"
               checkreturn="true"
               passthru="true"/>
     </target>
