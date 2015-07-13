@@ -165,6 +165,15 @@
             </exec>
         </sequential>
     </target>
+
+    <target name="install-rabbitmq">
+        <echo message="Installing rabbitmq"/>
+        <exec dir="${project.basedir}"
+              command="sudo apt-get update && apt-get install -y rabbitmq-server && /etc/init.d/rabbitmq-server start"
+              checkreturn="true"
+              passthru="true"/>
+    </target>
+
     <target name="full" depends="clean,setup,phpunit-report,parallelTasks,phpcb"/>
     <target name="build" depends="clean,setup,phpunit"/>
 </project>
